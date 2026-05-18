@@ -636,6 +636,62 @@ This SMB infrastructure lab demonstrates deployment and troubleshooting of a seg
 - RBAC
 - SMB file sharing
 - Domain authentication
+---
 
+# Lessons Learned
+
+This project reinforced several important infrastructure concepts:
+
+- VLAN segmentation improves both security and network organization
+- ACLs require careful testing and troubleshooting
+- DNS is critical for Active Directory functionality
+- DHCP relay simplifies centralized address management
+- File share permissions require both share and NTFS permissions to function correctly
+- Troubleshooting connectivity issues requires a layered approach across switching, routing, DNS, and authentication services
+
+The project also emphasized the importance of documentation and validation during infrastructure deployment.
+
+---
+
+# Future Improvements
+
+Potential future improvements for this environment include:
+
+- VPN remote access
+- Cloud backup integration
+- Network monitoring tools
+- Wireless controller deployment
+- SIEM and centralized logging
+- PowerShell automation
+- Python-based network automation
+- Layer 3 switching
+- Redundant internet connectivity
+- Azure AD or hybrid identity integration
+
+---
+
+# Topology Overview
+
+The environment was designed using a router-on-a-stick architecture with centralized Windows infrastructure services.
+
+Core services included:
+
+- Active Directory
+- DNS
+- SMB File Shares
+- VLAN segmentation
+- ACL security policies
+- NAT/PAT
+- DHCP relay
+
+Network segmentation was used to isolate:
+- management systems
+- employee workstations
+- servers
+- printers
+- guest devices
+- voice devices
+
+This structure simulates a realistic SMB enterprise network environment.
 The project was designed to simulate realistic SMB infrastructure deployment and troubleshooting workflows while strengthening networking and systems administration skills.
 The lab was built to simulate real-world enterprise infrastructure deployment and troubleshooting workflows while strengthening both networking and systems administration skills.
