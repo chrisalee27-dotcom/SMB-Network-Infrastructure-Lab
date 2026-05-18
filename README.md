@@ -381,5 +381,261 @@ This project demonstrates deployment and troubleshooting of a segmented SMB ente
 - NAT/PAT
 - DHCP relay
 - Access control policies
+# Recommended SMB Hardware Deployment
 
+This section outlines realistic hardware recommendations for deploying the SMB network infrastructure demonstrated in this lab.
+
+The goal was to balance:
+- reliability
+- scalability
+- security
+- manageability
+- SMB budget considerations
+
+---
+
+# Router / Firewall
+
+## Recommended Options
+
+- Cisco Meraki MX68
+- Fortinet FortiGate 40F
+- Ubiquiti Dream Machine Pro
+
+## Purpose
+
+- Inter-VLAN routing
+- Stateful firewall protection
+- NAT/PAT
+- VPN connectivity
+- Guest network isolation
+- Centralized management
+
+## Why These Devices
+
+These devices are commonly used in SMB environments because they provide enterprise-style security and management features without requiring large enterprise budgets.
+
+## Estimated Cost
+
+```text
+$400 - $900
+```
+
+---
+
+# Managed Switch
+
+## Recommended Options
+
+- Cisco CBS350-24T-4G
+- Ubiquiti USW-24
+- Aruba Instant On 1930
+
+## Purpose
+
+- VLAN segmentation
+- 802.1Q trunking
+- QoS
+- Voice VLAN support
+- Layer 2 switching
+
+## Why These Devices
+
+Managed switches allow the business to separate departments and services into VLANs while maintaining centralized control and scalability.
+
+## Estimated Cost
+
+```text
+$250 - $500
+```
+
+---
+
+# Wireless Access Points
+
+## Recommended Options
+
+- Ubiquiti U6 Lite
+- Cisco Business 140AC
+- Aruba Instant On AP22
+
+## Purpose
+
+- Wireless connectivity
+- Guest wireless access
+- Staff wireless access
+- VLAN-aware SSIDs
+
+## Why These Devices
+
+These APs support multiple SSIDs and VLAN tagging, allowing separate guest and employee wireless networks while maintaining centralized management.
+
+## Estimated Cost
+
+```text
+$100 - $180 each
+```
+
+## Recommended Quantity
+
+```text
+2 Access Points
+```
+
+---
+
+# Server Hardware
+
+## Recommended Options
+
+- Dell PowerEdge T150
+- HPE ProLiant ML30
+
+## Purpose
+
+- Active Directory
+- DNS
+- DHCP
+- File shares
+- Authentication services
+
+## Why These Devices
+
+These entry-level business servers provide reliable hardware for centralized infrastructure services in SMB environments.
+
+## Estimated Cost
+
+```text
+$900 - $1,500
+```
+
+---
+
+# End User Workstations
+
+## Recommended Options
+
+- Dell OptiPlex Micro
+- HP ProDesk Mini
+- Lenovo ThinkCentre Tiny
+
+## Purpose
+
+- Employee productivity
+- Domain authentication
+- Access to shared resources
+
+## Why These Devices
+
+Business-class systems provide better reliability, manageability, and lifecycle support than consumer-grade hardware.
+
+## Estimated Cost
+
+```text
+$600 - $900 each
+```
+
+---
+
+# Printers
+
+## Recommended Options
+
+- HP LaserJet Pro
+- Brother Business Laser Printer
+
+## Purpose
+
+- Shared network printing
+- Department printing services
+
+## Why These Devices
+
+Business laser printers are reliable for SMB environments and support centralized network printing.
+
+## Estimated Cost
+
+```text
+$250 - $400
+```
+
+---
+
+# Network Cabling
+
+## Recommended Standard
+
+- Cat6 Ethernet Cabling
+
+## Purpose
+
+- Gigabit network connectivity
+- Device uplinks
+- Infrastructure backbone
+
+## Why Cat6
+
+Cat6 provides better long-term scalability and performance compared to older cabling standards while remaining cost effective for SMB deployments.
+
+## Estimated Cost
+
+```text
+$150 - $300
+```
+
+---
+
+# Estimated SMB Deployment Cost
+
+| Item | Estimated Cost |
+|---|---|
+| Firewall / Router | $700 |
+| Managed Switch | $400 |
+| Wireless Access Points | $300 |
+| Server Hardware | $1,200 |
+| End User PCs (5) | $4,000 |
+| Printers | $300 |
+| Cabling | $250 |
+
+# Estimated Total
+
+```text
+~$7,000
+```
+
+---
+
+# Future Improvements
+
+Potential future improvements for this environment could include:
+
+- Cloud backups
+- Azure AD or hybrid identity
+- VPN remote access
+- SIEM monitoring
+- Network monitoring tools
+- Wireless controller integration
+- Redundant internet connectivity
+- Layer 3 switching
+- VoIP deployment
+- Automation with PowerShell or Python
+
+---
+
+# Project Summary
+
+This SMB infrastructure lab demonstrates deployment and troubleshooting of a segmented enterprise-style network integrating:
+
+- Cisco networking
+- VLAN segmentation
+- ACL security policies
+- NAT/PAT
+- DHCP relay
+- Active Directory
+- DNS services
+- RBAC
+- SMB file sharing
+- Domain authentication
+
+The project was designed to simulate realistic SMB infrastructure deployment and troubleshooting workflows while strengthening networking and systems administration skills.
 The lab was built to simulate real-world enterprise infrastructure deployment and troubleshooting workflows while strengthening both networking and systems administration skills.
