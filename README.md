@@ -67,7 +67,7 @@ The environment was built using a router-on-a-stick architecture with centralize
 
 ## SMB Network Layout
 
-[Open Screenshot](Screenshots/Network/smb%20network%20layoutpkt)
+[Open Screenshot](Screenshots/Network/smblayout.png)
 
 ---
 
