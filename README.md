@@ -1,42 +1,37 @@
 # SMB Network Infrastructure Lab
 
-## Project Overview
-
-This project simulates a segmented Small-to-Medium Business (SMB) network environment integrating Cisco networking technologies with Windows Active Directory infrastructure.
-
-The lab was designed to demonstrate:
-
-- VLAN segmentation
-- Inter-VLAN routing
-- NAT/PAT
-- ACL security policies
-- DHCP relay
-- Windows Active Directory
-- DNS services
-- SMB file sharing
-- Role-Based Access Control (RBAC)
-- Domain authentication
-- Network troubleshooting
+A simulated Small-to-Medium Business network environment integrating Cisco networking with Windows Active Directory infrastructure. Built to demonstrate real-world enterprise deployment and troubleshooting workflows.
 
 ---
 
-# Technologies Used
+## What Was Built
 
-| Technology | Purpose |
+- VLAN segmentation across 6 departments
+- Inter-VLAN routing using router-on-a-stick architecture
+- NAT/PAT for internet simulation
+- ACL security policies
+- DHCP relay across VLANs
+- Windows Active Directory with DNS
+- Role-Based Access Control (RBAC) with SMB file shares
+- Domain authentication and domain join process
+
+---
+
+## Technologies Used
+
+| Tool | Purpose |
 |---|---|
 | Cisco Packet Tracer | Network simulation |
-| Windows Server | AD DS / DNS / File Services |
+| Windows Server 2019 | AD DS / DNS / File Services |
 | Windows 10 | Client systems |
 | Oracle VirtualBox | Virtualization |
 | Cisco IOS CLI | Router and switch configuration |
 
 ---
 
-# Network Topology
+## Network Design
 
-The environment was built using a router-on-a-stick architecture with centralized server infrastructure.
-
-## VLAN Design
+**Architecture:** Router-on-a-stick with centralized Windows server infrastructure
 
 | VLAN | Name | Subnet | Purpose |
 |---|---|---|---|
@@ -49,649 +44,132 @@ The environment was built using a router-on-a-stick architecture with centralize
 
 ---
 
-# IP Addressing
+## Network Screenshots
 
-| Device | Address |
-|---|---|
-| Router G0/0.10 | 192.168.10.1 |
-| Router G0/0.20 | 192.168.20.1 |
-| Router G0/0.30 | 192.168.30.1 |
-| Router G0/0.40 | 192.168.40.1 |
-| Router G0/0.50 | 192.168.50.1 |
-| Router G0/0.60 | 192.168.60.1 |
-| Windows Server | 192.168.30.11 |
+**SMB Network Layout**
+![SMB Network Layout](Screenshots/Network/smblayout.png)
 
----
+**VLAN Verification**
+![VLAN Verification](Screenshots/Network/vlanbrief.png)
 
-# Network Screenshots
+**Trunk Port Configuration**
+![Trunk Configuration](Screenshots/Network/trunk.png)
 
-## SMB Network Layout
+**Router Interface Configuration**
+![Router Interfaces](Screenshots/Network/routerinterfacefacebrief.png)
 
-[Open Screenshot](path)(Screenshots/Network/smblayout.png)
+**Router Running Configuration**
+![Router Running Config](Screenshots/Network/routerrunningconfig.png)
 
----
+**ACL Configuration**
+![ACL Configuration](Screenshots/Network/accesslists.png)
 
-## VLAN Verification
+**NAT Translation Table**
+![NAT Translations](Screenshots/Network/nattranslations.png)
 
-[Open Screenshot](path)(Screenshots/Network/vlanbrief.png)
+**PAT Configuration**
+![PAT Configuration](Screenshots/Network/pat.png)
 
----
+**DHCP Validation — Printers VLAN**
+![DHCP Printers](Screenshots/Network/dhcponprinters.png)
 
-## Trunk Port Configuration
+**DHCP Validation — Voice VLAN**
+![DHCP Voice](Screenshots/Network/dhcponphone.png)
 
-[Open Screenshot](Screenshots/Network/trunk.png)
+**Connectivity Testing — VLAN 10**
+![VLAN 10 Pings](Screenshots/Network/vlan10pings.png)
 
----
+**Connectivity Testing — VLAN 20**
+![VLAN 20 Pings](Screenshots/Network/vlan20pings.jpg)
 
-## Router Interface Configuration
+**Printer VLAN Ping Test**
+![Printer VLAN Ping](Screenshots/Network/pingtovlan40.png)
 
-[Open Screenshot](Screenshots/Network/routerinterfacefacebrief.png)
-
----
-
-## Router Running Configuration
-
-[Open Screenshot](Screenshots/Network/routerrunningconfig.png)
-
----
-
-## ACL Configuration
-
-[Open Screenshot](Screenshots/Network/accesslists.png)
+**Guest VLAN Ping Test**
+![Guest VLAN Ping](Screenshots/Network/pingtovlan50.png)
 
 ---
 
-## NAT Translation Table
+## Active Directory Infrastructure
 
-[Open Screenshot](Screenshots/Network/nattranslations.png)
+Domain: `corp.local`
 
----
-
-## PAT Configuration
-
-[Open Screenshot](Screenshots/Network/pat.png)
-
----
-
-## DHCP Validation - Printers VLAN
-
-[Open Screenshot](Screenshots/Network/dhcponprinters.png)
-
----
-
-## DHCP Validation - Voice VLAN
-
-[Open Screenshot](Screenshots/Network/dhcponphone.png)
-
----
-
-## Connectivity Testing
-
-### VLAN 10 Ping Tests
-
-[Open Screenshot](Screenshots/Network/vlan10pings.png)
-
----
-
-### VLAN 20 Ping Tests
-
-[Open Screenshot](Screenshots/Network/vlan20pings.jpg)
-
----
-
-### Printer VLAN Ping Test
-
-[Open Screenshot](Screenshots/Network/pingtovlan40.png)
-
----
-
-### Guest VLAN Ping Test
-
-[Open Screenshot](Screenshots/Network/pingtovlan50.png)
-
----
-
-# Active Directory Infrastructure
-
-The Windows Server environment was configured with:
-
+Configured services:
 - Active Directory Domain Services
-- DNS Services
-- Organizational Units
-- Security Groups
-- SMB Shares
-- Domain Authentication
-
-Domain:
-```text
-corp.local
-```
-
----
-
-# Active Directory Screenshots
-
-## Active Directory + DNS Installation
-
-[Open Screenshot](Screenshots/Active%20Directory/addomainanddns.png)
-
----
-
-## Roles and Features Installation
-
-[Open Screenshot](Screenshots/Active%20Directory/addrolesandfeatures.png)
-
----
-
-## DNS Validation
-
-[Open Screenshot](Screenshots/Active%20Directory/dnsproof.png)
-
----
-
-## PowerShell Domain Setup
-
-[Open Screenshot](Screenshots/Active%20Directory/powershellworkaround.png)
-
----
-
-# Organizational Unit Structure
-
-Separate Organizational Units were created for:
-
-- Management
-- Staff
-- Users
-- Groups
-- Computers
-
----
-
-## Management Groups
-
-[Open Screenshot](Screenshots/Active%20Directory/mgmtgroups.png)
-
----
-
-## Management Users
-
-[Open Screenshot](Screenshots/Active%20Directory/mgmtusers.png)
-
----
-
-## Staff Groups
-
-[Open Screenshot](Screenshots/Active%20Directory/staffgroups.png)
-
----
-
-## Staff Users
-
-[Open Screenshot](Screenshots/Active%20Directory/staffusers.png)
-
----
-
-# Domain Join Process
-
-Windows clients were successfully joined to:
-
-```text
-corp.local
-```
-
----
-
-## Domain Join
-
-[Open Screenshot](Screenshots/Active%20Directory/joindomain.png)
-
----
-
-## Successful Domain Membership
-
-[Open Screenshot](Screenshots/Active%20Directory/domainjoined.png)
-
----
-
-# RBAC and File Share Security
-
-Security groups and NTFS/share permissions were implemented to simulate real-world Role-Based Access Control.
-
-Groups included:
-
-- HR_Users
-- Staff_Users
-- Sales_Users
-- IT_Admins
-
----
-
-# Share Access Validation
-
-## Successful HR Share Access
-
-[Open Screenshot](Screenshots/Active%20Directory/chrisleenaccesshrshare.png)
-
----
-
-## Successful Management Share Access
-
-[Open Screenshot](Screenshots/Active%20Directory/chrileemanagementshar.png)
-
----
-
-## HR User Access Validation
-
-[Open Screenshot](Screenshots/Active%20Directory/jjohnsonaccesshrshare.png)
-
----
-
-## Unauthorized Access Denied
-
-[Open Screenshot](Screenshots/Active%20Directory/jjhonsonaccessdeniedmgmtshare.png)
-
----
-
-# Administrative Privileges
-
-Administrative privileges were delegated using Domain Admins membership and AD security groups.
-
-## Elevated IT Admin Permissions
-
-[Open Screenshot](Screenshots/Active%20Directory/elevateitadminpriv.png)
-
----
-
-# Troubleshooting Performed
-
-The project included troubleshooting involving:
-
-- VLAN communication failures
-- ACL restrictions
-- DNS resolution
-- DHCP relay configuration
-- SMB share permissions
-- Domain authentication
-- NAT validation
-- Connectivity testing
-
-This troubleshooting process was intentionally documented to simulate real-world enterprise support workflows.
-
----
-
-# Skills Demonstrated
-
-## Networking
-
-- VLAN segmentation
-- Trunking
-- Router-on-a-stick
-- ACL implementation
-- NAT/PAT
-- DHCP relay
-- DNS troubleshooting
-
-## Systems Administration
-
-- Active Directory
-- Organizational Units
-- Group management
-- RBAC
-- SMB file shares
-- Domain joins
-
-## Troubleshooting
-
-- Connectivity troubleshooting
-- Access control validation
-- DNS troubleshooting
-- DHCP troubleshooting
-- Permission troubleshooting
-
----
-
-# Estimated Hardware Equivalent Cost
-
-| Equipment | Estimated Cost |
-|---|---|
-| Cisco Router | $400 |
-| Cisco Managed Switch | $300 |
-| Windows Server License | $500 |
-| Windows Workstations | $2,000 |
-| Cabling | $150 |
-| Wireless APs | $300 |
-| Printers | $250 |
-
-Estimated Total:
-```text
-~$3,500 - $4,000
-```
-
----
-
-# Project Summary
-
-This project demonstrates deployment and troubleshooting of a segmented SMB enterprise environment integrating:
-
-- Cisco networking
-- Active Directory
 - DNS
-- VLAN segmentation
-- RBAC
-- NAT/PAT
-- DHCP relay
-- Access control policies
-# Recommended SMB Hardware Deployment
-
-This section outlines realistic hardware recommendations for deploying the SMB network infrastructure demonstrated in this lab.
-
-The goal was to balance:
-- reliability
-- scalability
-- security
-- manageability
-- SMB budget considerations
-
----
-
-# Router / Firewall
-
-## Recommended Options
-
-- Cisco Meraki MX68
-- Fortinet FortiGate 40F
-- Ubiquiti Dream Machine Pro
-
-## Purpose
-
-- Inter-VLAN routing
-- Stateful firewall protection
-- NAT/PAT
-- VPN connectivity
-- Guest network isolation
-- Centralized management
-
-## Why These Devices
-
-These devices are commonly used in SMB environments because they provide enterprise-style security and management features without requiring large enterprise budgets.
-
-## Estimated Cost
-
-```text
-$400 - $900
-```
-
----
-
-# Managed Switch
-
-## Recommended Options
-
-- Cisco CBS350-24T-4G
-- Ubiquiti USW-24
-- Aruba Instant On 1930
-
-## Purpose
-
-- VLAN segmentation
-- 802.1Q trunking
-- QoS
-- Voice VLAN support
-- Layer 2 switching
-
-## Why These Devices
-
-Managed switches allow the business to separate departments and services into VLANs while maintaining centralized control and scalability.
-
-## Estimated Cost
-
-```text
-$250 - $500
-```
-
----
-
-# Wireless Access Points
-
-## Recommended Options
-
-- Ubiquiti U6 Lite
-- Cisco Business 140AC
-- Aruba Instant On AP22
-
-## Purpose
-
-- Wireless connectivity
-- Guest wireless access
-- Staff wireless access
-- VLAN-aware SSIDs
-
-## Why These Devices
-
-These APs support multiple SSIDs and VLAN tagging, allowing separate guest and employee wireless networks while maintaining centralized management.
-
-## Estimated Cost
-
-```text
-$100 - $180 each
-```
-
-## Recommended Quantity
-
-```text
-2 Access Points
-```
-
----
-
-# Server Hardware
-
-## Recommended Options
-
-- Dell PowerEdge T150
-- HPE ProLiant ML30
-
-## Purpose
-
-- Active Directory
-- DNS
-- DHCP
-- File shares
-- Authentication services
-
-## Why These Devices
-
-These entry-level business servers provide reliable hardware for centralized infrastructure services in SMB environments.
-
-## Estimated Cost
-
-```text
-$900 - $1,500
-```
-
----
-
-# End User Workstations
-
-## Recommended Options
-
-- Dell OptiPlex Micro
-- HP ProDesk Mini
-- Lenovo ThinkCentre Tiny
-
-## Purpose
-
-- Employee productivity
+- Organizational Units (Management, Staff, Users, Groups, Computers)
+- Security Groups with RBAC
+- SMB file shares with NTFS permissions
 - Domain authentication
-- Access to shared resources
 
-## Why These Devices
+**AD + DNS Installation**
+![AD and DNS](Screenshots/Active%20Directory/addomainanddns.png)
 
-Business-class systems provide better reliability, manageability, and lifecycle support than consumer-grade hardware.
+**Roles and Features**
+![Roles and Features](Screenshots/Active%20Directory/addrolesandfeatures.png)
 
-## Estimated Cost
+**DNS Validation**
+![DNS Proof](Screenshots/Active%20Directory/dnsproof.png)
 
-```text
-$600 - $900 each
-```
+**PowerShell Domain Setup**
+![PowerShell](Screenshots/Active%20Directory/powershellworkaround.png)
 
----
+**Management Groups**
+![Management Groups](Screenshots/Active%20Directory/mgmtgroups.png)
 
-# Printers
+**Management Users**
+![Management Users](Screenshots/Active%20Directory/mgmtusers.png)
 
-## Recommended Options
+**Staff Groups**
+![Staff Groups](Screenshots/Active%20Directory/staffgroups.png)
 
-- HP LaserJet Pro
-- Brother Business Laser Printer
+**Staff Users**
+![Staff Users](Screenshots/Active%20Directory/staffusers.png)
 
-## Purpose
+**Domain Join**
+![Domain Join](Screenshots/Active%20Directory/joindomain.png)
 
-- Shared network printing
-- Department printing services
-
-## Why These Devices
-
-Business laser printers are reliable for SMB environments and support centralized network printing.
-
-## Estimated Cost
-
-```text
-$250 - $400
-```
+**Successful Domain Membership**
+![Domain Joined](Screenshots/Active%20Directory/domainjoined.png)
 
 ---
 
-# Network Cabling
+## RBAC and File Share Security
 
-## Recommended Standard
+Security groups implemented: `HR_Users` · `Staff_Users` · `Sales_Users` · `IT_Admins`
 
-- Cat6 Ethernet Cabling
+**HR Share — Authorized Access**
+![HR Share Access](Screenshots/Active%20Directory/chrisleenaccesshrshare.png)
 
-## Purpose
+**Management Share — Authorized Access**
+![Management Share](Screenshots/Active%20Directory/chrileemanagementshar.png)
 
-- Gigabit network connectivity
-- Device uplinks
-- Infrastructure backbone
+**HR User Access Validation**
+![HR User](Screenshots/Active%20Directory/jjohnsonaccesshrshare.png)
 
-## Why Cat6
+**Unauthorized Access Denied**
+![Access Denied](Screenshots/Active%20Directory/jjhonsonaccessdeniedmgmtshare.png)
 
-Cat6 provides better long-term scalability and performance compared to older cabling standards while remaining cost effective for SMB deployments.
-
-## Estimated Cost
-
-```text
-$150 - $300
-```
+**Elevated IT Admin Permissions**
+![IT Admin](Screenshots/Active%20Directory/elevateitadminpriv.png)
 
 ---
 
-# Estimated SMB Deployment Cost
+## Skills Demonstrated
 
-| Item | Estimated Cost |
-|---|---|
-| Firewall / Router | $700 |
-| Managed Switch | $400 |
-| Wireless Access Points | $300 |
-| Server Hardware | $1,200 |
-| End User PCs (5) | $4,000 |
-| Printers | $300 |
-| Cabling | $250 |
+**Networking:** VLAN segmentation · Trunking · Router-on-a-stick · ACL implementation · NAT/PAT · DHCP relay · DNS troubleshooting
 
-# Estimated Total
+**Systems Administration:** Active Directory · Organizational Units · Group management · RBAC · SMB file shares · Domain joins
 
-```text
-~$7,000
-```
+**Troubleshooting:** Connectivity issues · Access control validation · DNS resolution · DHCP relay · Permission conflicts
 
 ---
 
-# Future Improvements
-
-Potential future improvements for this environment could include:
-
-- Cloud backups
-- Azure AD or hybrid identity
-- VPN remote access
-- SIEM monitoring
-- Network monitoring tools
-- Wireless controller integration
-- Redundant internet connectivity
-- Layer 3 switching
-- VoIP deployment
-- Automation with PowerShell or Python
-
----
-
-# Project Summary
-
-This SMB infrastructure lab demonstrates deployment and troubleshooting of a segmented enterprise-style network integrating:
-
-- Cisco networking
-- VLAN segmentation
-- ACL security policies
-- NAT/PAT
-- DHCP relay
-- Active Directory
-- DNS services
-- RBAC
-- SMB file sharing
-- Domain authentication
----
-
-# Lessons Learned
-
-This project reinforced several important infrastructure concepts:
+## Lessons Learned
 
 - VLAN segmentation improves both security and network organization
-- ACLs require careful testing and troubleshooting
-- DNS is critical for Active Directory functionality
-- DHCP relay simplifies centralized address management
-- File share permissions require both share and NTFS permissions to function correctly
-- Troubleshooting connectivity issues requires a layered approach across switching, routing, DNS, and authentication services
+- ACLs require careful planning and layered testing
+- DNS is critical for Active Directory functionality — most AD issues trace back to DNS
+- File share permissions require both share-level and NTFS permissions to work correctly
+- Troubleshooting requires a methodical layered approach across switching, routing, DNS, and authentication
 
-The project also emphasized the importance of documentation and validation during infrastructure deployment.
-
----
-
-# Future Improvements
-
-Potential future improvements for this environment include:
-
-- VPN remote access
-- Cloud backup integration
-- Network monitoring tools
-- Wireless controller deployment
-- SIEM and centralized logging
-- PowerShell automation
-- Python-based network automation
-- Layer 3 switching
-- Redundant internet connectivity
-- Azure AD or hybrid identity integration
-
----
-
-# Topology Overview
-
-The environment was designed using a router-on-a-stick architecture with centralized Windows infrastructure services.
-
-Core services included:
-
-- Active Directory
-- DNS
-- SMB File Shares
-- VLAN segmentation
-- ACL security policies
-- NAT/PAT
-- DHCP relay
-
-Network segmentation was used to isolate:
-- management systems
-- employee workstations
-- servers
-- printers
-- guest devices
-- voice devices
-
-This structure simulates a realistic SMB enterprise network environment.
-The project was designed to simulate realistic SMB infrastructure deployment and troubleshooting workflows while strengthening networking and systems administration skills.
-The lab was built to simulate real-world enterprise infrastructure deployment and troubleshooting workflows while strengthening both networking and systems administration skills.
