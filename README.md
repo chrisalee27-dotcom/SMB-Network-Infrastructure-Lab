@@ -67,13 +67,13 @@ The environment was built using a router-on-a-stick architecture with centralize
 
 ## SMB Network Layout
 
-[Open Screenshot](Screenshots/Network/smblayout.png)
+![description](path)(Screenshots/Network/smblayout.png)
 
 ---
 
 ## VLAN Verification
 
-[Open Screenshot](Screenshots/Network/vlanbrief.png)
+![description](path)(Screenshots/Network/vlanbrief.png)
 
 ---
 
